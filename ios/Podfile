@@ -45,4 +45,6 @@ target 'GitAccountFetcher' do
   use_unimodules!
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
 
+  pod 'RNFBApp', :path => '../node_modules/@react-native-firebase/app'
+
 end
