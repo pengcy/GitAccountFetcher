@@ -5,7 +5,7 @@ require_relative '../node_modules/react-native-unimodules/cocoapods'
 target 'GitAccountFetcher' do
 
   rnPrefix = "../node_modules/react-native"
-  
+
   # React Native and its dependencies
   pod 'FBLazyVector', :path => "#{rnPrefix}/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "#{rnPrefix}/Libraries/FBReactNativeSpec"
@@ -46,5 +46,6 @@ target 'GitAccountFetcher' do
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
 
   pod 'RNFBApp', :path => '../node_modules/@react-native-firebase/app'
+  pod 'RNFBAnalytics', :path => '../node_modules/@react-native-firebase/analytics'
 
 end

@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-firebase/analytics": "^7.2.1",
     "@react-native-firebase/app": "^8.1.0",
     "expo": "~36.0.0",
     "react": "~16.9.0",

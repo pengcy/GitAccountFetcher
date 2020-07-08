@@ -22,6 +22,7 @@ import org.unimodules.core.interfaces.SingletonModule;
 import expo.modules.constants.ConstantsPackage;
 import expo.modules.permissions.PermissionsPackage;
 import expo.modules.filesystem.FileSystemPackage;
+import io.invertase.firebase.analytics.ReactNativeFirebaseAnalyticsPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -42,8 +43,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new ReactNativeFirebaseAppPackage(),
-            new RNI18nPackage(),
+          new ReactNativeFirebaseAppPackage(),
+          new ReactNativeFirebaseAnalyticsPackage(),
+          new RNI18nPackage(),
           new ReanimatedPackage(),
           new RNGestureHandlerPackage(),
           new RNScreensPackage(),

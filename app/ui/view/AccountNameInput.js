@@ -1,9 +1,10 @@
+import analytics from '@react-native-firebase/analytics';
 import React, { Component } from 'react';
-import { Text, TextInput, View, Button, StyleSheet } from 'react-native';
+import { Button, StyleSheet, TextInput, View } from 'react-native';
+import { screens } from '../../AppNavigator';
+import AppColors from '../../res/color/AppColors';
 import i18n from '../../res/string/i18n';
-import { screens } from '../../AppNavigator'
-import Greeting from './Greeting'
-import AppColors from '../../res/color/AppColors'
+import Greeting from './Greeting';
 
 export default class AccountNameInput extends Component {
   constructor(props) {
@@ -13,6 +14,9 @@ export default class AccountNameInput extends Component {
   }
 
   onFetchButtonPress() {
+    analytics().logEvent('search', {
+      term: this.state.accountname,
+    })
     console.log("onFetchButtonPress onFetchButtonPress onFetchButtonPress to AccountDetailScreen this.state.accountname " + this.state.accountname)
     this.navigate(screens.accountDetail,  { accountname: this.state.accountname } )
   }
@@ -40,13 +44,13 @@ const styles = StyleSheet.create({
     container: {
       height: 160,
       width: 260,
-      padding: 10, 
+      padding: 10,
       backgroundColor: '#eee'
     },
     inputBox: {
         height: 40,
         marginBottom: 20,
         borderBottomWidth: 1,
-        borderBottomColor: 'gray'    
+        borderBottomColor: 'gray'
     }
 });
