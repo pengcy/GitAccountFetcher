@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: 'com.google.gms.google-services'
 
 import com.android.build.OutputFile
 
@@ -157,6 +158,7 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 dependencies {
+    implementation project(':@react-native-firebase_app')
     implementation project(':react-native-i18n')
     implementation project(':react-native-screens')
     implementation project(':react-native-reanimated')
