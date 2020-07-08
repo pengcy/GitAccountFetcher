@@ -23,6 +23,10 @@ DerivedData
 project.xcworkspace
 Pods/
 
+#firebase credentials
+GoogleService-info.plist
+google-services.json
+
 # Android/IntelliJ
 #
 build/
