@@ -139,11 +139,11 @@ export default class HomeScreen extends Component {
   }
 }
 
-``` 
+```
 
 
 ## Using a json file for configuration data
-Here is a config.json with api endponts. 
+Here is a config.json with api endponts.
 ```jsx
 {
 	"githubEndpoint": {
@@ -372,9 +372,9 @@ import { fetchAccountDetail } from '../../api/GithubApi';
     this.navigate = this.props.navigation.navigate
     this.state = {isLoading: true, error: false}
   }
-  
+
   componentDidMount() {
-    
+
     console.log("AccountDetailScreen componentDidMount()")
     this.setState({ loading: true }, async () => {
       try {
@@ -394,7 +394,7 @@ import { fetchAccountDetail } from '../../api/GithubApi';
 ```
 
 ## Custom component
-Here is a custom component, Greeting.js, it simply displays "Hi Amy" if the provided name props is "Amy". i18n is 
+Here is a custom component, Greeting.js, it simply displays "Hi Amy" if the provided name props is "Amy". i18n is
 ```jsx
 import React, { Component } from 'react'
 import { Text } from 'react-native';
@@ -429,3 +429,17 @@ https://github.com/AlexanderZaytsev/react-native-i18n
 
 [license]: http://revolunet.mit-license.org
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+
+
+
+## upload ios dsym file to crashlytics
+/Users/peng/dev/github/GitAccountFetcher/ios/Pods/FirebaseCrashlytics/upload-symbols -gsp /Users/peng/dev/github/GitAccountFetcher/ios/GoogleService-Info.plist -p ios /Users/peng/dev/github/GitAccountFetcher/ios/build/GitAccountFetcher/Build/Products/Debug-iphonesimulator/GitAccountFetcher.app.dSYM
+
+
+## Generate sourcemap
+For ios, run the following
+```
+react-native bundle --platform ios --entry-file index.js --dev false --bundle-output ./ios/main.jsbundle --assets-dest ./ios --sourcemap-output ./sourcemap.ios.js
+```
+
+For Android, do a release build

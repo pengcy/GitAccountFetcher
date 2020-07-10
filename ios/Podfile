@@ -47,5 +47,6 @@ target 'GitAccountFetcher' do
 
   pod 'RNFBApp', :path => '../node_modules/@react-native-firebase/app'
   pod 'RNFBAnalytics', :path => '../node_modules/@react-native-firebase/analytics'
+  pod 'RNFBCrashlytics', :path => '../node_modules/@react-native-firebase/crashlytics'
 
 end

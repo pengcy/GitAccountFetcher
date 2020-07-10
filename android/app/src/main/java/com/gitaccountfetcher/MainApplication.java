@@ -23,6 +23,7 @@ import expo.modules.constants.ConstantsPackage;
 import expo.modules.permissions.PermissionsPackage;
 import expo.modules.filesystem.FileSystemPackage;
 import io.invertase.firebase.analytics.ReactNativeFirebaseAnalyticsPackage;
+import io.invertase.firebase.crashlytics.ReactNativeFirebaseCrashlyticsPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -45,6 +46,7 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
           new ReactNativeFirebaseAppPackage(),
           new ReactNativeFirebaseAnalyticsPackage(),
+          new ReactNativeFirebaseCrashlyticsPackage(),
           new RNI18nPackage(),
           new ReanimatedPackage(),
           new RNGestureHandlerPackage(),
