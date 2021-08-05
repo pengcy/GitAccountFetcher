@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import { FlatList, ActivityIndicator, Text, View, TouchableHighlight, Image, StyleSheet  } from 'react-native'
+import { ActivityIndicator, FlatList, Text, TouchableHighlight, View } from 'react-native'
+import { fetchProjectList } from '../../api/GithubApi'
 import config from '../../config'
-import util from 'util'
-import { screens } from '../../AppNavigator'
-import { CardView } from "../view"
-import { fetchProjectList } from '../../api/GithubApi';
 import commonStyles from '../../res/style/common.style.js'
+import CardView from "../view/CardView"
 
 const githubEndpoint = config.githubEndpoint
 
@@ -77,7 +75,7 @@ export default class ProjectListScreen extends Component {
                   </View>
                   <View style={commonStyles.rowItem}>
                     <Text style={[commonStyles.propertyText, commonStyles.rowItemText]}>Description:</Text><Text style={commonStyles.rowItemText}> {data.description}</Text>
-                  </View>                  
+                  </View>
                </CardView>
            </TouchableHighlight>
        )

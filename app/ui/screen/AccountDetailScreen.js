@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, FlatList, ActivityIndicator, Text, View, TouchableOpacity, Image } from 'react-native'
+import { ActivityIndicator, Image, StyleSheet, TouchableOpacity, View } from 'react-native'
+import { fetchAccountDetail } from '../../api/GithubApi'
 import config from '../../config'
-import util from 'util'
-import { screens } from '../../AppNavigator'
-import { ObjectPropertyValueList } from '../view'
-import { fetchAccountDetail } from '../../api/GithubApi';
-
-import commonStyles from '../../res/style/common.style.js'
 import AppColors from '../../res/color/AppColors'
+import commonStyles from '../../res/style/common.style.js'
+import ObjectPropertyValueList from '../view/ObjectPropertyValueList'
+
 const githubEndpoint = config.githubEndpoint
 const listIconRes = require('../../res/img/ic_list.png')
 
@@ -25,7 +23,7 @@ export default class AccountDetailScreen extends Component {
   }
 
   componentDidMount() {
-    
+
     console.log("AccountDetailScreen componentDidMount()")
     this.setState({ loading: true }, async () => {
       try {

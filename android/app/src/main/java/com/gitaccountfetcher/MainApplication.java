@@ -1,39 +1,33 @@
 package com.gitaccountfetcher;
 
-import android.app.Application;
-
-import com.facebook.react.ReactApplication;
-import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
+import com.facebook.react.PackageList;
+import com.reactnativenavigation.NavigationApplication;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.facebook.react.ReactNativeHost;
+import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
-import com.facebook.soloader.SoLoader;
 import com.gitaccountfetcher.generated.BasePackageList;
 import com.swmansion.reanimated.ReanimatedPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
-
-import org.unimodules.adapters.react.ReactAdapterPackage;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
 import org.unimodules.adapters.react.ReactModuleRegistryProvider;
-import org.unimodules.core.interfaces.Package;
 import org.unimodules.core.interfaces.SingletonModule;
-import expo.modules.constants.ConstantsPackage;
-import expo.modules.filesystem.FileSystemPackage;
-import io.invertase.firebase.analytics.ReactNativeFirebaseAnalyticsPackage;
-import io.invertase.firebase.crashlytics.ReactNativeFirebaseCrashlyticsPackage;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends NavigationApplication {
+//  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(
+//    new BasePackageList().getPackageList(),
+//    Arrays.<SingletonModule>asList()
+//  );
   private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(
-    new BasePackageList().getPackageList(),
-    Arrays.<SingletonModule>asList()
+          new BasePackageList().getPackageList()
   );
 
-  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+  private final ReactNativeHost mReactNativeHost = new NavigationReactNativeHost(this) {
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -41,17 +35,10 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-          new ReactNativeFirebaseAppPackage(),
-          new ReactNativeFirebaseAnalyticsPackage(),
-          new ReactNativeFirebaseCrashlyticsPackage(),
-          new RNI18nPackage(),
-          new ReanimatedPackage(),
-          new RNGestureHandlerPackage(),
-          new RNScreensPackage(),
-          new ModuleRegistryAdapter(mModuleRegistryProvider)
-      );
+      List<ReactPackage> packages = new PackageList(this).getPackages();
+      packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
+
+      return packages;
     }
 
     @Override
@@ -68,6 +55,6 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
+
   }
 }

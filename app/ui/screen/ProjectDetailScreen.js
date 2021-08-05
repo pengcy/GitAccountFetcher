@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { FlatList, Text, View } from 'react-native'
-import { ObjectPropertyValueList } from '../view'
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import commonStyles from '../../res/style/common.style.js';
+import ObjectPropertyValueList from '../view/ObjectPropertyValueList';
 
-import commonStyles from '../../res/style/common.style.js'
 
 export default class ProjectDetailScreen extends Component {
 

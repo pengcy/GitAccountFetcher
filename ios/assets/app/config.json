@@ -1,0 +1,6 @@
+{
+	"githubEndpoint": {
+		"accountDetail": "https://api.github.com/users/%s",
+		"accountRepos": "https://api.github.com/users/%s/repos"
+	}
+}
