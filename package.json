@@ -6,7 +6,8 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "lint": "tslint --project . --config tslint.json --exclude 'src/typings.d.ts'"
   },
   "dependencies": {
     "expo": "^42.0.0",
@@ -27,12 +28,17 @@
   },
   "devDependencies": {
     "@babel/core": "7.14.8",
+    "@types/jest": "^26.0.24",
+    "@types/react": "^17.0.15",
+    "@types/react-native": "^0.64.12",
+    "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "27.0.6",
     "jest": "27.0.6",
     "jetifier": "2.0.0",
     "metro-react-native-babel-preset": "0.66.2",
     "react-test-renderer": "17.0.2",
-    "source-map": "^0.7.3"
+    "source-map": "^0.7.3",
+    "typescript": "^4.3.5"
   },
   "jest": {
     "preset": "react-native"
