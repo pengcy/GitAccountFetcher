@@ -12,12 +12,8 @@ Navigation.events().registerAppLaunchedListener(() => {
         children: [
           {
             component: {
+              id: ScreenNames.HOME_SCREEN,
               name: ScreenNames.HOME_SCREEN,
-              options: {
-                topBar: {
-                  visible: false,
-                }
-              }
             },
           }
         ],

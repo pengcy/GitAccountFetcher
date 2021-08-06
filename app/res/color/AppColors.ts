@@ -4,6 +4,6 @@ const AppColors = {
   accent: '#8dbdff',
   white: '#fff',
   black: '#000'
-}
+};
 
-export default AppColors
+export default AppColors;
