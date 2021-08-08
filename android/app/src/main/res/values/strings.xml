@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Git Account Fetcher</string>
+    <string name="title_instantapp">Instant app</string>
 </resources>

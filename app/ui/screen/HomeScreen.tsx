@@ -5,6 +5,7 @@ import commonStyles from '../../res/style/common.style'
 import { RnnFC } from '../../util/RnnFC.js'
 import ScreenNames from '../navigation/ScreenNames'
 import AccountNameInput from '../view/AccountNameInput'
+import NewModuleButton from '../view/NewModuleButton'
 
 interface IProps {
   readonly componentId: string;
@@ -33,6 +34,7 @@ const HomeScreen: RnnFC<IProps> = (props) => {
 
   return (
     <View style={commonStyles.container}>
+      <NewModuleButton/>
       <AccountNameInput
         onFetchPressed={onFetchPressed}
       />

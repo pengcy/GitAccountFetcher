@@ -8,3 +8,4 @@ applyNativeModulesSettingsGradle(settings)
 
 
 include ':app'
+include ':instantapp'

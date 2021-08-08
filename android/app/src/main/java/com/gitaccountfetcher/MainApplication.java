@@ -37,6 +37,7 @@ public class MainApplication extends NavigationApplication {
     protected List<ReactPackage> getPackages() {
       List<ReactPackage> packages = new PackageList(this).getPackages();
       packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
+      packages.add(new MyAppPackage());
 
       return packages;
     }
